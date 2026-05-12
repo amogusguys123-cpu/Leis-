@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rota de Mérito - Lei 11052026/2235</title>
+    <style>
+        :root {
+            --merit-green: #2ecc71;
+            --gold: #f1c40f;
+            --dark-blue: #2c3e50;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: var(--white);
+            width: 350px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 8px solid var(--merit-green);
+        }
+
+        h1 {
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .lei-tag {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+        }
+
+        .stat-box {
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark-blue);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #95a5a6;
+        }
+
+        .progress-bar-bg {
+            background: #ecf0f1;
+            height: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: var(--merit-green);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .btn-add {
+            background-color: var(--merit-green);
+            color: white;
+        }
+
+        .btn-use {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+        }
+
+        .history {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Sistema de Mérito</h1>
+        <span class="lei-tag">Lei nº 11052026/2235</span>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="stat-value" id="count-days">0</span>
+                <span class="stat-label">Dias Consecutivos</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-value" id="count-credits" style="color: #f1c40f;">0</span>
+                <span class="stat-label">Créditos de Defesa</span>
+            </div>
+        </div>
+
+        <div class="progress-bar-bg">
+            <div class="progress-fill" id="progress-bar"></div>
+        </div>
+        <p style="font-size: 0.7rem; color: #95a5a6;">Progresso para o próximo crédito (3 dias)</p>
+
+        <div class="controls">
+            <button class="btn-add" onclick="adicionarDia()">Registrar Dia Concluído</button>
+            <button class="btn-use" onclick="usarCredito()">Utilizar Crédito de Defesa</button>
+        </div>
+
+        <div class="history" id="log">
+            Aguardando registros...
+        </div>
+    </div>
+
+    <script>
+        let dias = 0;
+        let creditos = 0;
+        const maxCreditos = 2;
+
+        function atualizarDisplay() {
+            document.getElementById('count-days').innerText = dias;
+            document.getElementById('count-credits').innerText = creditos;
+            
+            // Atualiza barra de progresso (0, 33%, 66% ou 100%)
+            const porcentagem = (dias / 3) * 100;
+            document.getElementById('progress-bar').style.width = porcentagem + '%';
+        }
+
+        function adicionarDia() {
+            dias++;
+            let mensagem = "Dia registrado com sucesso!";
+
+            if (dias >= 3) {
+                if (creditos < maxCreditos) {
+                    creditos++;
+                    dias = 0;
+                    mensagem = "⭐ EXCELENTE! Você ganhou 1 Crédito de Mérito!";
+                } else {
+                    dias = 3;
+                    mensagem = "⚠️ Limite de créditos atingido (Max: 2).";
+                }
+            }
+            
+            atualizarDisplay();
+            document.getElementById('log').innerText = mensagem;
+        }
+
+        function usarCredito() {
+            if (creditos > 0) {
+                creditos--;
+                document.getElementById('log').innerText = "🛡️ Crédito usado para anular infração.";
+                atualizarDisplay();
+            } else {
+                alert("Você não possui créditos disponíveis.");
+            }
+        }
+    </script>
+</body>
+</html>
+
