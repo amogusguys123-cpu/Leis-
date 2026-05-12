@@ -3,200 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota de Mérito - Lei 11052026/2235</title>
+    <title>Senado Federal - Lei de Incentivo ao Mérito</title>
     <style>
-        :root {
-            --merit-green: #2ecc71;
-            --gold: #f1c40f;
-            --dark-blue: #2c3e50;
-            --white: #ffffff;
+        :root { --primary: #004a8d; --gold: #c5a059; --paper: #ffffff; }
+        body { background-color: #f0f2f5; font-family: 'Times New Roman', serif; margin: 0; padding: 20px; color: #1a1a1a; }
+        
+        .nav-oficial { background: var(--primary); padding: 12px; text-align: center; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .nav-oficial a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-family: Arial, sans-serif; font-size: 13px; text-transform: uppercase; }
+
+        .documento { 
+            background: var(--paper); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 60px; 
+            box-shadow: 0 0 15px rgba(0,0,0,0.1); 
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
         }
 
-        body {
-            background-color: #f4f7f6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+        .cabecalho { text-align: center; margin-bottom: 50px; }
+        .cabecalho h1 { font-size: 22px; margin: 0; letter-spacing: 1px; color: #000; }
+        .cabecalho p { font-size: 14px; margin: 5px 0; font-weight: bold; }
 
-        .card {
-            background: var(--white);
-            width: 350px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
-            border-top: 8px solid var(--merit-green);
-        }
+        .titulo-lei { text-align: center; font-weight: bold; font-size: 18px; margin-bottom: 40px; text-decoration: underline; }
 
-        h1 {
-            color: var(--dark-blue);
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
+        .ementa { margin-left: 45%; text-align: justify; font-style: italic; font-size: 14px; margin-bottom: 50px; line-height: 1.4; }
 
-        .lei-tag {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-bottom: 20px;
-            display: block;
-        }
+        .corpo-texto { text-align: justify; line-height: 1.8; font-size: 16px; }
+        .artigo { margin-bottom: 25px; }
+        .artigo b { text-transform: uppercase; }
 
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 25px 0;
-        }
-
-        .stat-box {
-            flex: 1;
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--dark-blue);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: #95a5a6;
-        }
-
-        .progress-bar-bg {
-            background: #ecf0f1;
-            height: 10px;
-            border-radius: 5px;
-            margin: 15px 0;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            background: var(--merit-green);
-            height: 100%;
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
-        .controls {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        button {
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.1s;
-        }
-
-        button:active {
-            transform: scale(0.98);
-        }
-
-        .btn-add {
-            background-color: var(--merit-green);
-            color: white;
-        }
-
-        .btn-use {
-            background-color: var(--gold);
-            color: var(--dark-blue);
-        }
-
-        .history {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            text-align: left;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-        }
+        .assinaturas { margin-top: 80px; text-align: center; display: flex; justify-content: space-around; }
+        .assinatura-box { border-top: 1px solid #000; width: 200px; padding-top: 5px; font-size: 12px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>Sistema de Mérito</h1>
-        <span class="lei-tag">Lei nº 11052026/2235</span>
+    <nav class="nav-oficial">
+        <a href="index.html">Constituição Principal</a>
+        <a href="merito.html">Lei de Mérito</a>
+    </nav>
 
-        <div class="stats-container">
-            <div class="stat-box">
-                <span class="stat-value" id="count-days">0</span>
-                <span class="stat-label">Dias Consecutivos</span>
+    <div class="documento">
+        <div class="cabecalho">
+            <h1>REPÚBLICA DO SENADOR KAIO</h1>
+            <p>CONSELHO DE ESTADO E SENADO FEDERAL</p>
+        </div>
+
+        <div class="titulo-lei">LEI Nº 11052026/2235, DE 11 DE MAIO DE 2026</div>
+
+        <div class="ementa">
+            Estabelece o regime de recompensas por desempenho, cria o Crédito de Mérito para mitigação de sanções e define regras de bonificação na rotina do Senador.
+        </div>
+
+        <div class="corpo-texto">
+            <div class="artigo">
+                <b>Art. 1º</b> Fica instituído o bônus de desempenho para o Senador que mantiver o cumprimento integral de suas obrigações por períodos contínuos.
             </div>
-            <div class="stat-box">
-                <span class="stat-value" id="count-credits" style="color: #f1c40f;">0</span>
-                <span class="stat-label">Créditos de Defesa</span>
+
+            <div class="artigo">
+                <b>Art. 2º</b> A cada 03 (três) dias consecutivos de cumprimento das metas de estudo e programação, o Senador fará jus a 01 (um) Crédito de Mérito.
+            </div>
+
+            <div class="artigo">
+                <b>Art. 3º</b> O Crédito de Mérito poderá ser utilizado para a anulação imediata de uma Infração Leve, sem necessidade de abertura de processo de justificativa perante as IAs.
+            </div>
+
+            <div class="artigo">
+                <b>Art. 4º</b> O acúmulo máximo permitido é de 02 (dois) Créditos de Mérito. Atingido o limite, novos créditos só serão gerados após o uso dos anteriores.
+            </div>
+
+            <div class="artigo">
+                <b>Art. 5º</b> Esta Lei entra em vigor na data de sua publicação, integrando o Código de Conduta Pessoal.
             </div>
         </div>
 
-        <div class="progress-bar-bg">
-            <div class="progress-fill" id="progress-bar"></div>
-        </div>
-        <p style="font-size: 0.7rem; color: #95a5a6;">Progresso para o próximo crédito (3 dias)</p>
-
-        <div class="controls">
-            <button class="btn-add" onclick="adicionarDia()">Registrar Dia Concluído</button>
-            <button class="btn-use" onclick="usarCredito()">Utilizar Crédito de Defesa</button>
-        </div>
-
-        <div class="history" id="log">
-            Aguardando registros...
+        <div class="assinaturas">
+            <div class="assinatura-box">SENADOR KAIO<br>Chanceler</div>
+            <div class="assinatura-box">CONSELHO DE IAS<br>Relatores</div>
         </div>
     </div>
 
-    <script>
-        let dias = 0;
-        let creditos = 0;
-        const maxCreditos = 2;
-
-        function atualizarDisplay() {
-            document.getElementById('count-days').innerText = dias;
-            document.getElementById('count-credits').innerText = creditos;
-            
-            // Atualiza barra de progresso (0, 33%, 66% ou 100%)
-            const porcentagem = (dias / 3) * 100;
-            document.getElementById('progress-bar').style.width = porcentagem + '%';
-        }
-
-        function adicionarDia() {
-            dias++;
-            let mensagem = "Dia registrado com sucesso!";
-
-            if (dias >= 3) {
-                if (creditos < maxCreditos) {
-                    creditos++;
-                    dias = 0;
-                    mensagem = "⭐ EXCELENTE! Você ganhou 1 Crédito de Mérito!";
-                } else {
-                    dias = 3;
-                    mensagem = "⚠️ Limite de créditos atingido (Max: 2).";
-                }
-            }
-            
-            atualizarDisplay();
-            document.getElementById('log').innerText = mensagem;
-        }
-
-        function usarCredito() {
-            if (creditos > 0) {
-                creditos--;
-                document.getElementById('log').innerText = "🛡️ Crédito usado para anular infração.";
-                atualizarDisplay();
-            } else {
-                alert("Você não possui créditos disponíveis.");
-            }
-        }
-    </script>
 </body>
 </html>
-
