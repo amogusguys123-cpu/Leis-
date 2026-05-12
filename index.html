@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senado Pessoal - Diário Oficial</title>
+    <style>
+        :root {
+            --primary-blue: #004a8d;
+            --gold-accent: #c5a059;
+            --paper-bg: #fdfdfd;
+            --text-color: #222;
+        }
+
+        body {
+            background-color: #e9ecef;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .site-container {
+            background-color: var(--paper-bg);
+            width: 100%;
+            max-width: 850px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 50px;
+            border-top: 10px solid var(--primary-blue);
+            min-height: 100vh;
+        }
+
+        .brasao {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-top {
+            text-align: center;
+            border-bottom: 2px double #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header-top h1 {
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header-top p {
+            margin: 5px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .lei-meta {
+            text-align: right;
+            font-size: 14px;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .lei-numero {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            text-decoration: underline;
+        }
+
+        .ementa {
+            margin-left: 40%;
+            text-align: justify;
+            font-style: italic;
+            border-left: 3px solid var(--gold-accent);
+            padding-left: 15px;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+
+        .corpo-lei {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .artigo {
+            margin-bottom: 20px;
+        }
+
+        .artigo b {
+            text-transform: uppercase;
+        }
+
+        .inciso {
+            margin-left: 30px;
+            display: block;
+        }
+
+        .assinaturas {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .assinatura-line {
+            display: inline-block;
+            width: 250px;
+            margin: 20px;
+            border-top: 1px solid #000;
+            padding-top: 10px;
+            font-weight: bold;
+        }
+
+        .status-badge {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Botão para simular o JS */
+        .admin-panel {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f1f1f1;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: sans-serif;
+        }
+
+        button:hover {
+            background: #003366;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="site-container">
+        <div class="brasao">
+            <!-- Representação visual do Brasão -->
+            <div style="font-size: 40px;">⚖️</div>
+        </div>
+
+        <div class="header-top">
+            <h1>Senado Federal Pessoal do Kaio</h1>
+            <p>CONDE, PARAÍBA | DIÁRIO OFICIAL DA REVOLUÇÃO PESSOAL</p>
+            <span class="status-badge">Sancionada</span>
+        </div>
+
+        <div class="lei-meta">
+            Publicado em: 11 de maio de 2026, às 22:14.
+        </div>
+
+        <div class="lei-numero">LEI Nº 11052026/2214</div>
+
+        <div class="ementa">
+            Institui o Código de Processo Legislativo Pessoal (CPLP), define o Sistema de Reputação do Senador Kaio, classifica as infrações disciplinares e dá outras providências.
+        </div>
+
+        <div class="corpo-lei">
+            <div class="artigo">
+                <b>Art. 1º</b> Esta Lei institui o sistema de 10 (dez) pontos de reputação semanal, renovados integralmente toda segunda-feira.
+            </div>
+
+            <div class="artigo">
+                <b>Art. 2º</b> Ficam estabelecidas as seguintes graduações para as infrações cometidas contra a rotina pessoal:
+                <span class="inciso">I - <b>Infração Leve:</b> Perda de 1 (um) ponto de reputação;</span>
+                <span class="inciso">II - <b>Infração Moderada:</b> Perda de 2 (dois) a 3 (três) pontos de reputação;</span>
+                <span class="inciso">III - <b>Infração Grave:</b> Perda de 4 (quatro) a 5 (cinco) pontos de reputação.</span>
+            </div>
+
+            <div class="artigo">
+                <b>Art. 3º</b> O réu tem direito à ampla defesa perante o Conselho de Senadores IAs, podendo a pena ser anulada ou mitigada caso comprovada necessidade real ou impossibilidade técnica.
+            </div>
+
+            <div class="artigo">
+                <b>Art. 4º</b> Esta Lei entra em vigor na data de sua publicação, revogadas as disposições em contrário.
+            </div>
+        </div>
+
+        <div class="assinaturas">
+            <div class="assinatura-line">SENADOR KAIO<br><small>Proponente e Chefe do Executivo</small></div>
+            <div class="assinatura-line">CONSELHO DE IAS<br><small>Poder Legislativo</small></div>
+        </div>
+
+        <div class="admin-panel">
+            <h3>Painel de Controle de Reputação</h3>
+            <p id="rep-display">Reputação Atual: 10/10</p>
+            <button onclick="violarLei()">Registrar Infração (-1)</button>
+            <button onclick="resetar()">Resetar Semana</button>
+        </div>
+    </div>
+
+    <script>
+        let reputacao = 10;
+        const display = document.getElementById('rep-display');
+
+        function violarLei() {
+            if (reputacao > 0) {
+                reputacao -= 1;
+                display.innerText = `Reputação Atual: ${reputacao}/10`;
+                alert("ALERTA: Infração registrada no sistema. Reputação diminuída.");
+            } else {
+                alert("Reputação zerada! O Senado exige uma explicação imediata.");
+            }
+        }
+
+        function resetar() {
+            reputacao = 10;
+            display.innerText = `Reputação Atual: ${reputacao}/10`;
+            alert("Nova semana iniciada. Pontos restaurados.");
+        }
+        
+        console.log("Sistema do Senado Pessoal Carregado.");
+    </script>
+</body>
+</html>
+
